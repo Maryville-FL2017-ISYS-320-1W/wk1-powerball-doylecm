@@ -8,7 +8,7 @@ public class LotteryOdds {
 		BigInteger whiteballs = new BigInteger("69");
 		BigInteger whiteballschosen = new BigInteger("5");
 		BigInteger redballs = new BigInteger("26");
-	    oddsofwinning = factorial(whiteballs).divide (factorial(whiteballschosen).multiply (factorial(whiteballs.min (whiteballschosen))));  // Superduper magic equation!!
+	    oddsofwinning = factorial(whiteballs) / (factorial(whiteballschosen) * (factorial(whiteballs.min (whiteballschosen))));  // Superduper magic equation!!
 	    oddsofwinning = oddsofwinning.multiply (redballs);
 	    
 	    System.out.println("The odds of winning the PowerBall are 1:" + oddsofwinning);
@@ -16,14 +16,14 @@ public class LotteryOdds {
 	    
     }
 
-	private static BigInteger factorial(BigInteger whiteballs) {
-	    BigInteger I = new BigInteger ("1");
-	    BigInteger F = new BigInteger ("1");
-	 
-	    for (BigInteger C = new BigInteger ("1"); C <= whiteballs; C++) {
-	      F = F.divide (BigInteger (I++));
+	private static int factorial(BigInteger whiteballs) {
+	   int i = 1;
+	   int f = 1;
+	   int c = 1;
+	    for (c = 1; c <= 69; c++) {
+	      f = f / (i++);
 	    }
 
-		return F;
+		return f;
 	}
 }
